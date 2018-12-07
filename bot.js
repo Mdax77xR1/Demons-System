@@ -355,36 +355,4 @@ client.on('message', ra3d => {
          });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.login(process.env.BOT_TOKEN);
