@@ -44,15 +44,6 @@ client.on('ready', () => {
 
 
 
-
-
-
-
-
-
-
-
-
  client.on('message' , message => {
     if (message.content === '+help') {
                if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
@@ -75,6 +66,10 @@ client.on('ready', () => {
       message.author.sendEmbed(embed);
         }
     });
+
+
+
+
 
     client.on('message', message => {
       var prefix = "+"
