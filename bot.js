@@ -261,7 +261,7 @@ function clean(text) {
         return text;
 }
 
-const prefix = "+";
+var prefix = "+";
 
 client.on("ready", () => {
   console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
