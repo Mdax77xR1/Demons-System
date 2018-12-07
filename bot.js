@@ -63,8 +63,8 @@ if (message.content.startsWith(prefix + 'help')) {
      ✴ Bot By : .xŘ1 | ! - Mdäx#0518 
      ✴ Have Fun .
      ===========================================================
-X-X
-let page = 1;
+Soon And I Will Translate The Command To Englih`]
+	let page = 1;
 
     let embed = new Discord.RichEmbed()
     .setColor('RANDOM')
@@ -104,6 +104,7 @@ let page = 1;
     })
     }
 });
+
 
 
 
