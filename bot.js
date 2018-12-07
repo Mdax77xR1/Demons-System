@@ -44,28 +44,25 @@ client.on('ready', () => {
 
 
 
- client.on('message' , message => {
-    if (message.content === '+help') {
-               if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
-             let embed = new Discord.RichEmbed()
-    
-          .setThumbnail(message.author.avatarURL)    
-          .addField("**۩ஜ▬▬▬▬▬▬▬✦أوامر البوت✦▬▬▬▬▬▬ஜ۩**","** **")
-          .addField("**❖ +say**","**يردد لك الكلام الي تقوله**")
-          .addField("**❖ +bc**","**لإرسال رساله لجميع اعضاء السيرفر **")
-          .addField("**❖ +kick<Mention>**","**لطرد اي شخص من السيرفر **")
-          .addField("**❖ +ban <Mention>**","**  لإعطاء باند لأاي شخص **")
-          .addField("**❖ +ping**","**لمعرفة بنق البوت  **")
-          .addField("**❖ +server**","**معلومات عن السيرفر**")
-          .addField("**❖ +ccolors<Number>**","**ينشا لك الوان مع كم الوان تبي**")
-          .addField("**❖ +new**","**لإنشاء تكت**")
-          .addField("**❖ +close**","**لإقفال التكت**")
-          .addField("**❖ +mute<Mention>**","**لإعطاء ميوت لأي شخص**")
-
-        .setColor('RANDOM')
-      message.author.sendEmbed(embed);
-        }
-    });
+client.on('message', message => {
+ var prefix = "-";
+if (message.content.startsWith(prefix + 'help')) {
+    let pages = [
+	`=-=-=-=-=-= 🌍 Public Commands - اوامر عامة 🌍 =-=-=-=-=-=
+    ✴ +ban ======> To Show Your ID | لتبنيد شخص من السيرفر
+    ✴ +kick ====> Ping Of Bot | لطرد شخص من السيرفر
+    ✴ +say => Show All Bots In The Server | تخلي البوت يردد كلامك  
+    ✴ +bc =====> Information Of The Bot |  إرسال برودكاست لجميع اعضاء السيرفر
+    ✴ +new ==> Information Of The Server | لإنشاء تذكره  
+    ✴ +close ===> Member Count | لإقفال التذكره
+    ✴ +ccolors<Number> =====> To Calculate | لإنشاء الوان 
+    ✴ +server =====> To Tag A Word |  معلومات عن السيرفر  
+    ✴ +mute ===> Show Rooms Of Server |لإعطاء ميوت لأي شخص
+  ✴ +ping ===> Show Rooms Of Server | لرؤية بنق البوت
+     ===========================================================
+     ✴ Bot By : .xŘ1 | ! - Mdäx#0518 
+     ✴ Have Fun .
+     ===========================================================
 
 
 
