@@ -73,6 +73,9 @@ Soon And I Will Translate The Command To Englih`]
 
     message.channel.sendEmbed(embed).then(msg => {
 
+        msg.react('◀').then( r => {
+            msg.react('▶')
+
 
         const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
         const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
@@ -101,6 +104,7 @@ Soon And I Will Translate The Command To Englih`]
     })
     }
 });
+
 
 
 
