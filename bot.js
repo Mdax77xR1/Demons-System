@@ -253,8 +253,6 @@ message.channel.send(`**# ${args}**`);
 
 
 
-const Discord = require("discord.js");
-const client = new Discord.Client();
 
 function clean(text) {
     if (typeof(text) === "string")
