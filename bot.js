@@ -45,7 +45,7 @@ client.on('ready', () => {
 
 
 client.on('message', message => {
- var prefix = "-";
+ var prefix = "+";
 if (message.content.startsWith(prefix + 'help')) {
     let pages = [
 	`=-=-=-=-=-= 🌍 Public Commands - اوامر عامة 🌍 =-=-=-=-=-=
@@ -72,9 +72,6 @@ Soon And I Will Translate The Command To Englih`]
     .setDescription(pages[page-1])
 
     message.channel.sendEmbed(embed).then(msg => {
-
-        msg.react('◀').then( r => {
-            msg.react('▶')
 
 
         const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
