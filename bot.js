@@ -66,7 +66,10 @@ client.on('ready', () => {
           .addField("**❖ +ban <Mention>**","**  لإعطاء باند لأاي شخص **")
           .addField("**❖ +ping**","**لمعرفة بنق البوت  **")
           .addField("**❖ +server**","**معلومات عن السيرفر**")
-          .addField("**❖ +ccolors**","**ينشا لك الوان مع كم الوان تبي**")
+          .addField("**❖ +ccolors<Number>**","**ينشا لك الوان مع كم الوان تبي**")
+          .addField("**❖ +new**","**لإنشاء تكت**")
+          .addField("**❖ +close**","**لإقفال التكت**")
+          .addField("**❖ +mute<Mention>**","**لإعطاء ميوت لأي شخص**")
 
         .setColor('RANDOM')
       message.author.sendEmbed(embed);
@@ -154,7 +157,7 @@ if(message.content.startsWith(prefix + 'bc')) {
 if(!message.channel.guild) return message.channel.send('**This Command Only For Servers**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**You Dont Have perms** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-let copy = "Speed Bot";
+let copy = "Demons Bot";
 let request = `Requested By ${message.author.username}`;
 if (!args) return message.reply('**Write Some Things To Broadcast**');message.channel.send(`**Are You Sure \nThe Broadcast: ** \` ${args}\``).then(msg => {
 msg.react('✅')
@@ -204,7 +207,7 @@ client.on('message' , message => {
 
  client.on('message', message => {
   var prefix ="+";
-if(message.content.startsWith(prefix +"server")){
+if(message.content.startsWith("+server")){
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
 const now = new Date();
@@ -261,23 +264,13 @@ function clean(text) {
 var prefix = "+";
 
 client.on("ready", () => {
-console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
-client.user.setGame(`Support Magic |${prefix}new`);
-});
+client.user.setGame(`Demons Official | +help`,"https://www.twitch.tv/Mdax77xR1")
+ client.user.setStatus("online")
+  
+ });
 
 
-client.on("message", (message) => {
-if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-if (message.content.toLowerCase().startsWith(prefix + `help`)) {
-  const embed = new Discord.RichEmbed()
-  .setTitle(`:mailbox_with_mail: Vulnix Help`)
-  .setColor(0xCF40FA)
-  .setDescription(`Hello! I'm Vulnix, the Discord bot for super cool support ticket stuff and more! Here are my commands:`)
-  .addField(`Tickets`, `[${prefix}new]() > Opens up a new ticket and tags the Support Team\n[${prefix}close]() > Closes a ticket that has been resolved or been opened by accident`)
-  .addField(`Other`, `[${prefix}help]() > Shows you this help menu your reading\n[${prefix}ping]() > Pings the bot to see how long it takes to react\n[${prefix}about]() > Tells you all about Vulnix`)
-  message.channel.send({ embed: embed });
-}
 
 if (message.content.toLowerCase().startsWith(prefix + `ping`)) {
   message.channel.send(`Hoold on!`).then(m => {
@@ -317,7 +310,7 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 
   message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`-confirm\`. This will time out in 10 seconds and be cancelled.`)
   .then((m) => {
-    message.channel.awaitMessages(response => response.content === '-confirm', {
+    message.channel.awaitMessages(response => response.content === '+confirm', {
       max: 1,
       time: 10000,
       errors: ['time'],
