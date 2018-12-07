@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const fs = require("fs"); 
 const jimp = require('jimp');   
-var prefix = "$"
+var prefix = "+"
 const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -258,7 +258,7 @@ function clean(text) {
       return text;
 }
 
-const prefix = "+";
+var prefix = "+";
 
 client.on("ready", () => {
 console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
