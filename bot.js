@@ -263,11 +263,6 @@ function clean(text) {
 
 var prefix = "+";
 
-if (message.content.toLowerCase().startsWith(prefix + `ping`)) {
-  message.channel.send(`Hoold on!`).then(m => {
-  m.edit(`:ping_pong: Wew, made it over the ~waves~ ! **Pong!**\nMessage edit time is ` + (m.createdTimestamp - message.createdTimestamp) + `ms, Discord API heartbeat is ` + Math.round(client.ping) + `ms.`);
-  });
-}
 
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
   const reason = message.content.split(" ").slice(1).join(" ");
@@ -350,10 +345,6 @@ client.on('message', ra3d => {
 
 
 
-
-
-
-
 client.on('message', async message =>{
   if (message.author.boss) return;
 	var prefix = "+";
@@ -412,19 +403,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
   }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
