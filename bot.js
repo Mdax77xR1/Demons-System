@@ -470,54 +470,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 
 
 
-client.on('message', message => {
-  var argresult = message.content.split(` `).slice(1).join(' ');
-    if (!developers.includes(message.author.id)) return;
-
-if (message.content.startsWith('+Watching')) {
-client.user.setActivity(argresult, {type:'WATCHING'});
-  client.user.setStatus("idle")
-    message.channel.send(`تم تغيير واتشنق البوت`)
-} else 
-if (message.content.startsWith('+Listening')) {
-client.user.setActivity(argresult , {type:'LISTENING'});
-  client.user.setStatus("idle")
-    message.channel.send(`تم تغيير لستنق البوت`)
-  } else
-  if (message.content.startsWith('+SetName')) {
-client.user.setUsername(argresult).then
-    message.channel.sendMessage(`تم تغيير أسم البوت`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
-} else
-if (message.content.startsWith('SetAvatar')) {
-client.user.setAvatar(argresult);
-  message.channel.sendMessage(`تم تغير صورة البوت`);
-      } else     
-if (message.content.startsWith('+Playing')) {
-client.user.setActivity(argresult , {type:'PLAYING'});
-  client.user.setStatus("idle")
-    message.channel.send(`تم تغيير بلاينق البوت`) //Mdax
-if (message.content.startsWith('+Streaming')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/Mdax77xR1");
-  client.user.setStatus("dnd")
-   message.channel.send(`تم تغيير ستريمنق البوت`)
-}
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 client.on('message', message => {
           let args = message.content.split(' ').slice(1);
@@ -556,12 +508,4 @@ setInterval(function(){})
             
     }
 });
-
-
-
-
-
-
-
-
 client.login(process.env.BOT_TOKEN);
