@@ -56,22 +56,23 @@ if (message.content === '+help') {
       .addField("**❖ +mute**","**لإعطاء ميوت لشخص**")
       .addField("**❖ +say**","**يردد كلامك **")
       .addField("**❖ +bc**","**لإرسال برودكاست لجميع اعضاء السيرفر**")
-      .addField("**❖ +new<Mention>**","**لفتح تذكره**")
-      .addField("**❖ +close<Mention>**","**لإقفال التذكره**")
-      .addField("**❖ +server<Mention>**","**معلومات عن السيرفر**")
-      .addField("**❖ +ping<Mention>**","**لرؤية بنق البوت**")
-      .addField("**❖ +SetName<Mention>**","**لتغيير اسم البوت**")
-      .addField("**❖ +Stream<Mention>**","**لتغيير ستريمنق البوت**")
-      .addField("**❖ +Playing<Mention>**","**لتغيير بلاينق البوت**")
-      .addField("**❖ +Listening<Mention>**","**لتغيير لستنق البوت**")
-      .addField("**❖ +Watching<Mention>**","**لتغيير واتشنق البوت**")
+      .addField("**❖ +new**","**لفتح تذكره**")
+      .addField("**❖ +close**","**لإقفال التذكره**")
+      .addField("**❖ +server**","**معلومات عن السيرفر**")
+      .addField("**❖ +ping**","**لرؤية بنق البوت**")
+      .addField("**❖ +SetName**","**لتغيير اسم البوت**")
+      .addField("**❖ +Stream**","**لتغيير ستريمنق البوت**")
+      .addField("**❖ +Playing**","**لتغيير بلاينق البوت**")
+      .addField("**❖ +Listening**","**لتغيير لستنق البوت**")
+      .addField("**❖ +Watching**","**لتغيير واتشنق البوت**")
+      .addField("**❖ +ccolor<Number>**","**لصنع الوان مع عددهم**")
+      .addField("**❖ +setcolor<Number>**","**لإختيار اللون**")
       .addField("**۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩**","** **")
 
     .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
 });
- 
   
  
 
@@ -508,10 +509,65 @@ client.user.setActivity(argresult , {type:'LISTENING'});
 if (message.content.startsWith('asssdddsadasda134234sdasd')) {
 client.user.setActivity(argresult , {type:'PLAYING'});
   client.user.setStatus("idle")
-    message.channel.send(`<:true:488465924370989056> `) // .
-  }
-          
+    message.channel.send(`<:true:488465924370989056> `) // 
+   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+          let args = message.content.split(' ').slice(1);
+   if(message.content.split(' ')[0] == '+setcolor'){
+           const embedd = new Discord.RichEmbed()
+     .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+   .setDescription(`**لا يوجد لون بهذا الأسم ** ❌ `)
+   .setColor(`ff0000`)
+
+    if(!isNaN(args) && args.length > 0)
+    
+
+if    (!(message.guild.roles.find("name",`${args}`))) return  message.channel.sendEmbed(embedd);
+
+
+       var a = message.guild.roles.find("name",`${args}`)
+                if(!a)return;
+const embed = new Discord.RichEmbed()
+                    
+     .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+   .setDescription(`**Done , تم تغير لونك . ✅ **`)
+ 
+   .setColor(`${a.hexColor}`)
+  message.channel.sendEmbed(embed);
+          if (!args)return;
+setInterval(function(){})
+                  let count = 0;
+                  let ecount = 0;
+        for(let x = 1; x < 201; x++){
+           
+            message.member.removeRole(message.guild.roles.find("name",`${x}`))
+          
+            }
+                message.member.addRole(message.guild.roles.find("name",`${args}`));
+        
+            
+    }
+});
+
 
 
 
