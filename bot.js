@@ -406,10 +406,9 @@ client.on('message', ra3d => {
 
 
 
-
 client.on('message', async message =>{
   if (message.author.boss) return;
-	var prefix = "+";
+	var prefix = "-";
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
@@ -466,7 +465,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 
 });
  
-
 
 
 
