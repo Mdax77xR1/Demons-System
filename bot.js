@@ -260,54 +260,14 @@ message.channel.sendEmbed(embed)
 
 
 
-client.on('message',function(message) {
-	let prefix = "+";
-let args = message.content.split(" ").slice(1).join(" ");
-if(message.content.startsWith(prefix + "say")) {
-if(!args) return;
-message.channel.send(`**# ${args}**`); 
-}
-});
 
 
 
 
-
-
-
-
-
-
-
-
-function clean(text) {
-    if (typeof(text) === "string")
-      return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-    else
-        return text;
-}
 
 var prefix = "+";
-
-client.on("ready", () => {
-  console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
-  client.user.setGame(`Demons Official | +help`,"https://www.twitch.tv/Mdax77xR1")
-});
-
-
 client.on("message", (message) => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-  if (message.content.toLowerCase().startsWith(prefix + `asdasdasda`)) {
-    const embed = new Discord.RichEmbed()
-    .setTitle(`:mailbox_with_mail: Vulnix Help`)
-    .setColor(0xCF40FA)
-    .setDescription(`Hello! I'm Vulnix, the Discord bot for super cool support ticket stuff and more! Here are my commands:`)
-    .addField(`Tickets`, `[${prefix}new]() > Opens up a new ticket and tags the Support Team\n[${prefix}close]() > Closes a ticket that has been resolved or been opened by accident`)
-    .addField(`Other`, `[${prefix}help]() > Shows you this help menu your reading\n[${prefix}ping]() > Pings the bot to see how long it takes to react\n[${prefix}about]() > Tells you all about Vulnix`)
-    message.channel.send({ embed: embed });
-  }
-
   if (message.content.toLowerCase().startsWith(prefix + `ping`)) {
     message.channel.send(`Hoold on!`).then(m => {
     m.edit(`:ping_pong: Wew, made it over the ~waves~ ! **Pong!**\nMessage edit time is ` + (m.createdTimestamp - message.createdTimestamp) + `ms, Discord API heartbeat is ` + Math.round(client.ping) + `ms.`);
@@ -405,38 +365,35 @@ client.on('message', ra3d => {
 
 
 
-
-
-
-
-
-
-
+const adminprefix = "+";
+const devs = ['520703606081585152'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith('+Playing')) {
+if (message.content.startsWith(adminprefix + 'SetPlaying')) {
   client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
-  if (message.content.startsWith('+SetName')) {
+  if (message.content.startsWith(adminprefix + 'SetName')) {
 client.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-  if (message.content.startsWith('+SetAvatar')) {
+  if (message.content.startsWith(adminprefix + 'SetAvatar')) {
 client.user.setAvatar(argresult);
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith('+Stream')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");//حقوقxR1 Server
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)//حقوق xR1 Server
+  if (message.content.startsWith(adminprefix + 'Watching')) {
+        if (!devs.includes(message.author.id)) return;
+  client.user.setActivity(argresult, {type:'WATCHING'});
+  } else
+  if (message.content.startsWith(adminprefix + 'Listening')) {
+        if (!devs.includes(message.author.id)) return;
+  client.user.setActivity(argresult , {type:'LISTENING'});
+  } else    
+if (message.content.startsWith(adminprefix + 'Streaming')) {
+      if (!devs.includes(message.author.id)) return;
+  client.user.setGame(argresult, "https://www.twitch.tv/Mdax77x");
 }
 });
-
-
-
 
 
 
