@@ -563,9 +563,8 @@ setInterval(function(){})
           
             }
                 message.member.addRole(message.guild.roles.find("name",`${args}`));
-        
-            
-    }
+  }
+          
 });
 
 
