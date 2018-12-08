@@ -489,7 +489,7 @@ client.user.setUsername(argresult).then
     message.channel.sendMessage(`تم تغيير أسم البوت`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-f (message.content.startsWith('SetAvatar')) {
+if (message.content.startsWith('SetAvatar')) {
 client.user.setAvatar(argresult);
   message.channel.sendMessage(`تم تغير صورة البوت`);
       } else     
