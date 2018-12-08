@@ -470,28 +470,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 
 
 
-const adminprefix = "+";
-client.on('message', message => {
-  var argresult = message.content.split(` `).slice(1).join(' ');
-    if (!devs.includes(message.author.id)) return;
-    
-if (message.content.startsWith(adminprefix + 'Playing')) {
-  client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
-} else 
-  if (message.content.startsWith(adminprefix + 'SetName')) {
-client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
-} else
-  if (message.content.startsWith(adminprefix + 'setavatar')) {
-client.user.setAvatar(argresult)
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-      } else     
-if (message.content.startsWith(adminprefix + 'Stream')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
-var perfix = "+";
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!developers.includes(message.author.id)) return;
@@ -499,21 +477,32 @@ client.on('message', message => {
 if (message.content.startsWith('+Watching')) {
 client.user.setActivity(argresult, {type:'WATCHING'});
   client.user.setStatus("idle")
-    message.channel.send(`تم تغيير حالة البوت إلى واتشنق`)
+    message.channel.send(`تم تغيير واتشنق البوت`)
 } else 
 if (message.content.startsWith('+Listening')) {
 client.user.setActivity(argresult , {type:'LISTENING'});
   client.user.setStatus("idle")
-    message.channel.send(`تم تغيير حالة البوت إلى لستنق`)
-  } else 
-if (message.content.startsWith('asssdddsadasda134234sdasd')) {
+    message.channel.send(`تم تغيير لستنق البوت`)
+  } else
+  if (message.content.startsWith('+SetName')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`تم تغيير أسم البوت`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+f (message.content.startsWith('SetAvatar')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`تم تغير صورة البوت`);
+      } else     
+if (message.content.startsWith('+Playing')) {
 client.user.setActivity(argresult , {type:'PLAYING'});
   client.user.setStatus("idle")
-    message.channel.send(`<:true:488465924370989056> `) // 
-   }
+    message.channel.send(`تم تغيير بلاينق البوت`) //Mdax
+if (message.content.startsWith('+Streaming')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/Mdax77xR1");
+  client.user.setStatus("dnd")
+   message.channel.send(`تم تغيير ستريمنق البوت`)
+}
 });
-
-
 
 
 
@@ -532,7 +521,7 @@ client.user.setActivity(argresult , {type:'PLAYING'});
 
 client.on('message', message => {
           let args = message.content.split(' ').slice(1);
-   if(message.content.split(' ')[0] == '+setcolor'){
+   if(message.content.split(' ')[0] == '-color'){
            const embedd = new Discord.RichEmbed()
      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
    .setDescription(`**لا يوجد لون بهذا الأسم ** ❌ `)
@@ -563,10 +552,10 @@ setInterval(function(){})
           
             }
                 message.member.addRole(message.guild.roles.find("name",`${args}`));
-  }
-          
+        
+            
+    }
 });
-
 
 
 
