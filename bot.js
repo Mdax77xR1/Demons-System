@@ -490,9 +490,7 @@ client.user.setAvatar(argresult)
 if (message.content.startsWith(adminprefix + 'Stream')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
-}
-});
-
+var perfix = "+";
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!developers.includes(message.author.id)) return;
@@ -510,24 +508,10 @@ client.user.setActivity(argresult , {type:'LISTENING'});
 if (message.content.startsWith('asssdddsadasda134234sdasd')) {
 client.user.setActivity(argresult , {type:'PLAYING'});
   client.user.setStatus("idle")
-    message.channel.send(`<:true:488465924370989056> `) // حقوق ميرسي.
+    message.channel.send(`<:true:488465924370989056> `) // .
   }
           
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
