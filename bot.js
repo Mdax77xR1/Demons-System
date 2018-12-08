@@ -37,73 +37,65 @@ client.on('ready', () => {
        console.log(`ON ${client.guilds.size} Servers '     xR1Server' `);
      console.log(`----------------`);
    console.log(`Logged in as ${client.user.tag}!`);
- client.user.setGame(`Demons Official | +help`,"https://www.twitch.tv/Mdax77xR1")
- client.user.setStatus("online")
-  
- });
 
 
 
-client.on('message', message => {
- var prefix = "+";
-if (message.content.startsWith(prefix + 'help')) {
-    let pages = [
-	`=-=-=-=-=-= 🌍 Public Commands - اوامر عامة 🌍 =-=-=-=-=-=
-    ✴ +ban ======> To Show Your ID | لتبنيد شخص من السيرفر
-    ✴ +kick ====> Ping Of Bot | لطرد شخص من السيرفر
-    ✴ +say => Show All Bots In The Server | تخلي البوت يردد كلامك  
-    ✴ +bc =====> Information Of The Bot |  إرسال برودكاست لجميع اعضاء السيرفر
-    ✴ +new ==> Information Of The Server | لإنشاء تذكره  
-    ✴ +close ===> Member Count | لإقفال التذكره
-    ✴ +ccolors<Number> =====> To Calculate | لإنشاء الوان 
-    ✴ +server =====> To Tag A Word |  معلومات عن السيرفر  
-    ✴ +mute ===> Show Rooms Of Server |لإعطاء ميوت لأي شخص
-  ✴ +ping ===> Show Rooms Of Server | لرؤية بنق البوت
-     ===========================================================
-     ✴ Bot By : .xŘ1 | ! - Mdäx#0518 
-     ✴ Have Fun .
-     ===========================================================
-Soon And I Will Translate The Command To Englih`]
-	let page = 1;
 
-    let embed = new Discord.RichEmbed()
+
+
+
+client.on('message' , message => {
+if (message.content === '+help') {
+           if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
+         let embed = new Discord.RichEmbed()
+
+      .setThumbnail(message.author.avatarURL)    
+      .addField("**۩ஜ▬▬▬▬▬▬✦ (أوامر البوت (عام✦▬▬▬▬▬▬ஜ۩**","** **")
+     .addField("**❖ +ban**","**لتبنيد شخص من السيرفر**")
+      .addField("**❖ +kick**","**لطرد شخص من السيرفر**")
+      .addField("**❖ +mute**","**لإعطاء ميوت لشخص**")
+      .addField("**❖ +say**","**يردد كلامك **")
+      .addField("**❖ +bc**","**لإرسال برودكاست لجميع اعضاء السيرفر**")
+      .addField("**❖ +new<Mention>**","**لفتح تذكره**")
+      .addField("**❖ +close<Mention>**","**لإقفال التذكره**")
+      .addField("**❖ +server<Mention>**","**معلومات عن السيرفر**")
+      .addField("**❖ +ping<Mention>**","**لرؤية بنق البوت**")
+      .addField("**❖ +SetName<Mention>**","**لتغيير اسم البوت**")
+      .addField("**❖ +Stream<Mention>**","**لتغيير ستريمنق البوت**")
+      .addField("**❖ +Playing<Mention>**","**لتغيير بلاينق البوت**")
+      .addField("**❖ +Listening<Mention>**","**لتغيير لستنق البوت**")
+      .addField("**❖ +Watching<Mention>**","**لتغيير واتشنق البوت**")
+      .addField("**۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩**","** **")
+
     .setColor('RANDOM')
-    .setFooter(`Page ${page} of ${pages.length}`)
-    .setDescription(pages[page-1])
-
-    message.channel.sendEmbed(embed).then(msg => {
-
-        msg.react('◀').then( r => {
-            msg.react('▶')
-
-
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
-
-
-        const backwards = msg.createReactionCollector(backwardsFilter, { time: 20000});
-        const forwards = msg.createReactionCollector(forwardsFilter, { time: 20000});
-
-
-
-        backwards.on('collect', r => {
-            if (page === 1) return;
-            page--;
-            embed.setDescription(pages[page-1]);
-            embed.setFooter(`Page ${page} of ${pages.length}`);
-            msg.edit(embed)
-        })
-        forwards.on('collect', r => {
-            if (page === pages.length) return;
-            page++;
-            embed.setDescription(pages[page-1]);
-            embed.setFooter(`Page ${page} of ${pages.length}`);
-            msg.edit(embed)
-        })
-        })
-    })
+  message.author.sendEmbed(embed);
     }
 });
+ 
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -473,6 +465,66 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 
 });
  
+
+
+
+
+const adminprefix = "+";
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
+    
+if (message.content.startsWith(adminprefix + 'Playing')) {
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+} else 
+  if (message.content.startsWith(adminprefix + 'SetName')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'setavatar')) {
+client.user.setAvatar(argresult)
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+      } else     
+if (message.content.startsWith(adminprefix + 'Stream')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
+}
+});
+
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!developers.includes(message.author.id)) return;
+
+if (message.content.startsWith('+Watching')) {
+client.user.setActivity(argresult, {type:'WATCHING'});
+  client.user.setStatus("idle")
+    message.channel.send(`تم تغيير حالة البوت إلى واتشنق`)
+} else 
+if (message.content.startsWith('+Listening')) {
+client.user.setActivity(argresult , {type:'LISTENING'});
+  client.user.setStatus("idle")
+    message.channel.send(`تم تغيير حالة البوت إلى لستنق`)
+  } else 
+if (message.content.startsWith('asssdddsadasda134234sdasd')) {
+client.user.setActivity(argresult , {type:'PLAYING'});
+  client.user.setStatus("idle")
+    message.channel.send(`<:true:488465924370989056> `) // حقوق ميرسي.
+  }
+          
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
