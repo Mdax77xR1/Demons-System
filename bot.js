@@ -94,7 +94,7 @@ message.channel.sendEmbed(embed)
 
 
 
-lient.on('message' , message => {
+client.on('message' , message => {
     if (message.content === '+help') {
                if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
              let embed = new Discord.RichEmbed()
