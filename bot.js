@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
-const fs = require("fs"); 
 const dateFormat = require('dateformat'); 
-const jimp = require('jimp');   
-var prefix = "$"
+const prefix = "+"
 const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
