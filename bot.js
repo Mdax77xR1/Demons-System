@@ -29,47 +29,4 @@ client.on('ready', () => {
   console.log('')
   console.log('')
 
-
-client.on('ready', () => {
-    console.log(`----------------`);
-       console.log(`Welcome Mdax`);
-         console.log(`----------------`);
-       console.log(`ON ${client.guilds.size} Servers '     xR1Server' `);
-     console.log(`----------------`);
-   console.log(`Logged in as ${client.user.tag}!`);
-
-
-
-
-
-
-
-
-
-
- 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.login(process.env.BOT_TOKEN);
