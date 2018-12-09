@@ -387,36 +387,6 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 
 
 
-const adminprefix = "-";
-const devs = ['335484868479811584'];
-client.on('message', message => {
-  var argresult = message.content.split(` `).slice(1).join(' ');
-    if (!devs.includes(message.author.id)) return;
-    
-if (message.content.startsWith(adminprefix + 'SetPlaying')) {
-  client.user.setGame(argresult);
-} else 
-  if (message.content.startsWith(adminprefix + 'SetName')) {
-client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-} else
-  if (message.content.startsWith(adminprefix + 'SetAvatar')) {
-client.user.setAvatar(argresult);
-      } else     
-  if (message.content.startsWith(adminprefix + 'Watching')) {
-        if (!devs.includes(message.author.id)) return;
-  client.user.setActivity(argresult, {type:'WATCHING'});
-  } else
-  if (message.content.startsWith(adminprefix + 'Listening')) {
-        if (!devs.includes(message.author.id)) return;
-  client.user.setActivity(argresult , {type:'LISTENING'});
-  } else    
-if (message.content.startsWith(adminprefix + 'Streaming')) {
-      if (!devs.includes(message.author.id)) return;
-  client.user.setGame(argresult, "https://www.twitch.tv/Mdax77x");
-}
-});
-
 
 
 
