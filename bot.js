@@ -49,7 +49,7 @@ client.user.setStatus("online")
 client.on('message', message => {
 if (message.content.startsWith('السلام عليكم')){
      let ra3d = new Discord.RichEmbed()
-  .setColor("#e9ab26")
+  .setColor("RANDOM")
   .setDescription("**وعليكم السلام ورحمة الله وبركاتة**")
      
      
@@ -124,7 +124,6 @@ client.on('message' , message => {
 
 client.on('message', async message =>{
   if (message.author.boss) return;
-	var prefix = "+";
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
@@ -185,7 +184,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 
 
 client.on('message', message => {
-	var prefix = "+"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -228,7 +226,6 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-	var prefix = "+"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -268,7 +265,6 @@ client.on('message', message => {
 
 
  client.on('message', message => {
-	    var prefix = "+";
               if(!message.channel.guild) return;
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**This Command Only For Servers**').then(m => m.delete(5000));
@@ -315,7 +311,6 @@ client.on('message', message => {
 
 
 client.on('message', ra3d => {
-var prefix = "+";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
 if(ra3d.content.startsWith(prefix + 'ccolors')) {
     if(!args) return ra3d.channel.send('`How Many Colors??`');
