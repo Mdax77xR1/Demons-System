@@ -1,7 +1,6 @@
-
 const Discord = require('discord.js');
 const fs = require("fs"); 
- const dateFormat = require('dateformat'); 
+const dateFormat = require('dateformat'); 
 const jimp = require('jimp');   
 var prefix = "$"
 const client = new Discord.Client();
