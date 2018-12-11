@@ -416,31 +416,28 @@ if (command == "say") {
 
 
 
+const developers = ['320423357709549568'];
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!developers.includes(message.author.id)) return;
 
-const devs = ['335484868479811584' , '501195970680324105' , '' , ''];
-          const adminprefix = "+";
-          client.on('message', message => {
-              var argresult = message.content.split(`).slice(1).join(' ');
-                if (!devs.includes(message.author.id)) return;
-
-            if (message.content.startsWith(adminprefix + 'Playing')) {
-              client.user.setGame(argresult);
-                message.channel.sendMessage(:white_check_mark:   ${argresult})
-            } else
-            if (message.content.startsWith(adminprefix + 'Watching')) {
-            client.user.setActivity(argresult, {type:'WATCHING'});
-                message.channel.sendMessage(:white_check_mark:   ${argresult})
-            } else
-            if (message.content.startsWith(adminprefix + 'Listening')) {
-            client.user.setActivity(argresult , {type:'LISTENING'});
-                message.channel.sendMessage(:white_check_mark:   ${argresult})
-            } else
-            if (message.content.startsWith(adminprefix + 'Streaming')) {
-              client.user.setGame(argresult, "https://www.twitch.tv/Mdax77xR1");
-                message.channel.sendMessage(:white_check_mark:   ${argresult}`)
-            }
-            });
-
+if (message.content.startsWith('+Watching')) {
+client.user.setActivity(argresult, {type:'WATCHING'});
+  client.user.setStatus("online")
+    message.channel.send(`تم تغيير واتشنق البوت`)
+} else 
+if (message.content.startsWith('+Listrening')) {
+client.user.setActivity(argresult , {type:'LISTENING'});
+  client.user.setStatus("online")
+    message.channel.send(`تم تغيير لستنق البوت`)
+  } else 
+if (message.content.startsWith('+Playing')) {
+client.user.setActivity(argresult , {type:'PLAYING'});
+  client.user.setStatus("online")
+    message.channel.send(`تم تغيير بلاينق البوت`) // Mdax77xR1
+  }
+          
+});
 
 
 
