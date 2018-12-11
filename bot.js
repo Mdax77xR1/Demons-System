@@ -109,6 +109,11 @@ client.on('message' , message => {
           .addField("**❖ +setcolor<Number>**","**لوضع لون**")
           .addField("**❖ +new**","**لصنع تذكره**")
           .addField("**❖ +close**","**لإقفال التذكره**")
+          .addField("**❖ +Streaming**","**لصنع تذكره**")
+          .addField("**❖ +Watching**","**لتغيير واتشنق البوت**")
+          .addField("**❖ +Listening**","**لتغيير لستنق البوت**")
+          .addField("**❖ +Playing**","**لتغيير بلاينق البوت**")
+
           .addField("**۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩**","** **")
         .setColor('RANDOM')
       message.author.sendEmbed(embed);
@@ -391,7 +396,7 @@ client.on('message', message => {
 
   let args = message.content.split(" ").slice(1);
 
-if (command == "Esay") {
+if (command == "say") {
 
     let say = new Discord.RichEmbed()
 
@@ -412,7 +417,29 @@ if (command == "Esay") {
 
 
 
+const devs = ['335484868479811584' , '501195970680324105' , '' , ''];
+          const adminprefix = "+";
+          client.on('message', message => {
+              var argresult = message.content.split(`).slice(1).join(' ');
+                if (!devs.includes(message.author.id)) return;
 
+            if (message.content.startsWith(adminprefix + 'Playing')) {
+              client.user.setGame(argresult);
+                message.channel.sendMessage(:white_check_mark:   ${argresult})
+            } else
+            if (message.content.startsWith(adminprefix + 'Watching')) {
+            client.user.setActivity(argresult, {type:'WATCHING'});
+                message.channel.sendMessage(:white_check_mark:   ${argresult})
+            } else
+            if (message.content.startsWith(adminprefix + 'Listening')) {
+            client.user.setActivity(argresult , {type:'LISTENING'});
+                message.channel.sendMessage(:white_check_mark:   ${argresult})
+            } else
+            if (message.content.startsWith(adminprefix + 'Streaming')) {
+              client.user.setGame(argresult, "https://www.twitch.tv/Mdax77xR1");
+                message.channel.sendMessage(:white_check_mark:   ${argresult}`)
+            }
+            });
 
 
 
