@@ -95,33 +95,40 @@ message.channel.sendEmbed(embed)
 
 
 
-client.on('message' , message => {
-    if (message.content === '*help') {
-               if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
-             let embed = new Discord.RichEmbed()
-    
-          .setThumbnail(message.author.avatarURL)    
-          .addField("**۩ஜ▬▬▬▬▬▬▬▬▬✦أوامر البوت✦▬▬▬▬▬▬▬▬▬ஜ۩**","** **")
-          .addField("**❖ +server**","**معلومات عن السيرفر**")
-          .addField("**❖ +mute<Mention>**","**لإعطاء ميوت لشخص**")
-          .addField("**❖ +ban**","**لإعطاء باند لشخص**")
-          .addField("**❖ +kick <Mention>**","**لطرد شخص من السيرفر**")
-          .addField("**❖ +bc**","**لإرسال برودكاست لجميع اعضاء السيرفر**")
-          .addField("**❖ +say**","**يردد كلامك مع امبد**")
-          .addField("**❖ +ccolors<Number>**","**لصنع رتب ملونه مع عدد**")
-          .addField("**❖ +setcolor<Number>**","**لوضع لون**")
-          .addField("**❖ +new**","**لصنع تذكره**")
-          .addField("**❖ +close**","**لإقفال التذكره**")
-          .addField("**❖ +Streaming**","**لصنع تذكره**")
-          .addField("**❖ +Watching**","**لتغيير واتشنق البوت**")
-          .addField("**❖ +Listening**","**لتغيير لستنق البوت**")
-          .addField("**❖ +Playing**","**لتغيير بلاينق البوت**")
 
-          .addField("**۩ஜ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ஜ۩**","** **")
-        .setColor('RANDOM')
-      message.author.sendEmbed(embed);
-        }
-    });
+
+
+
+
+
+client.on('message' , message => {
+if (message.content === '$help') {
+           if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
+         let embed = new Discord.RichEmbed()
+
+      .setThumbnail(message.author.avatarURL)    
+      .addField("**۩ஜ▬▬▬▬▬▬✦ (أوامر البوت (عام✦▬▬▬▬▬▬ஜ۩**","** **")
+     .addField("**❖ +server**","**معلومات عن السيرفر**")
+      .addField("**❖ +mute**","**لإعطاء ميوت لأي شخص**")
+      .addField("**❖ +ban**","**لتبنيد اي شخص**")
+      .addField("**❖ +kick <Mention>**","**لطرد اي شخص من السيرفر**")
+      .addField("**❖ +say**","**لترديد كلامك**")
+      .addField("**❖ +ccolors**","**يسوي لك الوان**")
+      .addField("**❖ +setcolor**","**تختار اللون**")
+      .addField("**❖ +new  **","**فتح تذكره**")
+      .addField("**❖ +close**","**إقفال التذكره **")
+    
+    .setColor('RANDOM')
+  message.author.sendEmbed(embed);
+    }
+});
+ 
+  
+
+
+
+
+
 
 
 
