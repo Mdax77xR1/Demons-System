@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const dateFormat = require('dateformat'); 
-const prefix = "+"
+const prefix = "*"
 const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -30,16 +30,19 @@ client.on('ready', () => {
 
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Welcome Mdax`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     xR1Server' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setStatus("online")
- 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -93,7 +96,7 @@ message.channel.sendEmbed(embed)
 
 
 client.on('message' , message => {
-    if (message.content === '+help') {
+    if (message.content === '*help') {
                if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
              let embed = new Discord.RichEmbed()
     
@@ -340,7 +343,7 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
 
 client.on('message', message => {
           let args = message.content.split(' ').slice(1);
-   if(message.content.split(' ')[0] == '+SetColor'){
+   if(message.content.split(' ')[0] == '*SetColor'){
            const embedd = new Discord.RichEmbed()
      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
    .setDescription(`**لا يوجد لون بهذا الأسم ** ❌ `)
@@ -444,7 +447,7 @@ client.user.setActivity(argresult , {type:'PLAYING'});
 
 
 
-const adminprefix = "$";
+const adminprefix = "*";
 const devs = ['501195970680324105','335484868479811584'];
 client.on('message', message => {
  var argresult = message.content.split(` `).slice(1).join(' ');
